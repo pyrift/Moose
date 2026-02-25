@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block content %}
+ <section class="hero-wrap hero-wrap-2">
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 text-center ftco-animate pt-5">
+        <h1 class="mb-3 bread">About</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>About <i class="fa fa-chevron-right"></i></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero-wrap py-md-4">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters justify-content-center slider-text align-items-center" data-scrollax-parent="true">
+      <div class="col-md-10 ftco-animate py-5">
+        <div class="row pb-md-5">
+            {% for obj in abouts %}
+             <div class="col-md-4">
+              <div class="author">
+               <div class="img" style="background-image: url({{ obj.author.image.url }});"></div>
+               <div class="text">
+                <h3>{{ obj.author_name }}</h3>
+                <p>{{ obj.description }}</p>
+                <ul class="ftco-footer-social list-unstyled mt-2">
+                 <li class="ftco-animate"><a href={{ obj.twitter }}><span class="fa fa-twitter"></span></a></li>
+                 <li class="ftco-animate"><a href={{ obj.facebook }}><span class="fa fa-facebook"></span></a></li>
+                 <li class="ftco-animate"><a href={{ obj.instagram }}><span class="fa fa-instagram"></span></a></li>
+               </ul>
+             </div>
+           </div>
+         </div>
+
+         <div class="col-md-8 author-details">
+          <h2>{{ obj.title }}</h2>
+          <p>{{ obj.description }}</p>
+          <p>{{ obj.author_information  }}</p>
+          <p>{{ obj.author_information  }}</p>
+          <div class="mt-5">
+           <h3>How I Work</h3>
+           <p>{{ obj.author_information  }}</p>
+         </div>
+       </div>
+             {% endfor %}
+ </div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ftco-intro ftco-section bg-light">
+ <div class="container">
+  <div class="row justify-content-center">
+   <div class="col-md-12 text-center">
+     <h2>Subscribe to our Newsletter</h2>
+     <div class="row justify-content-center">
+      <div class="col-md-5">
+       <form action="about.html#" class="subscribe-form">
+         <div class="form-group d-flex">
+           <input type="text" class="form-control" placeholder="Enter email address">
+           <input type="submit" value="Subscribe" class="submit px-3">
+         </div>
+       </form>
+     </div>
+   </div>
+ </div>
+</div>
+</div>
+</div>
+</section>
+
+
+{% endblock %}
+
+{#<!-- loader -->#}
+{#<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>#}
+{##}
+{##}
+{#<script src="js/jquery.min.js"></script>#}
+{#<script src="js/jquery-migrate-3.0.1.min.js"></script>#}
+{#<script src="js/popper.min.js"></script>#}
+{#<script src="js/bootstrap.min.js"></script>#}
+{#<script src="js/jquery.easing.1.3.js"></script>#}
+{#<script src="js/jquery.waypoints.min.js"></script>#}
+{#<script src="js/jquery.stellar.min.js"></script>#}
+{#<script src="js/owl.carousel.min.js"></script>#}
+{#<script src="js/jquery.magnific-popup.min.js"></script>#}
+{#<script src="js/jquery.animateNumber.min.js"></script>#}
+{#<script src="js/scrollax.min.js"></script>#}
+{#<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>#}
+{#<script src="js/google-map.js"></script>#}
+{#<script src="js/main.js"></script>#}
+{##}
+{#<!-- Global site tag (gtag.js) - Google Analytics -->#}
+{#<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>#}
+{#<script>#}
+{#  window.dataLayer = window.dataLayer || [];#}
+{#  function gtag(){dataLayer.push(arguments);}#}
+{#  gtag('js', new Date());#}
+{##}
+{#  gtag('config', 'UA-23581568-13');#}
+{#</script>#}
+{##}
+{#</body>#}
+{#</html>     #}
