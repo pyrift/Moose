@@ -8,11 +8,11 @@ def home_page(request):
     }
     return render(request, 'index.html', context)
 
-def blog(request):
+def blog_page(request):
     blog = Post.objects.all().order_by('-id')
     context = {'blogs': blog}
     return render(request, 'blog.html', context)
-def  about(request):
+def about_paggge(request):
     about = Post.objects.all().order_by('-id')
     context = {'abouts': about}
     return render(request, 'about.html', context)
