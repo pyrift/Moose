@@ -49,6 +49,16 @@ class About(CreatedDate):
     facebook = models.URLField(null=True, blank=True)
     instagram = models.URLField(null=True, blank=True)
 
+class Comment(CreatedDate):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    website = models.URLField(null=True, blank=True)
+    message = models.TextField()
+
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)
