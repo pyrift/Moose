@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Author, Post, Tag, About,Contact,Comment
+from .models import  Post, Tag, Contacts,Comment
 from django.contrib.auth.decorators import login_required
-from .form import CommentForm, ContactsForm
+from .form import CommentForm, ContactForm
 def home_page(request):
     post = Post.objects.all().order_by('-id')
     context = {
@@ -47,14 +47,16 @@ def article_detail(request,pk):
 #     context = {'contacts': contacts}
 #     return render(request, 'contact.html', context)
 
+
+
 def contact_page(request):
     if request.method == 'POST':
-        form = ContactsForm(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('contact')
     else:
-        form = ContactsForm()
+        form = ContactForm()
     context = {
         'form': form
     }

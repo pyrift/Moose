@@ -12,13 +12,13 @@ class CommentForm(forms.ModelForm):
             fild.widget.attrs['class'] = 'form-control'
             fild.widget.attrs['placeholder'] = fild_name
 
-class ContactsForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     class Meta:
         model = Contacts
-        fields = ['full_name', 'email', 'subject','message']
-        exclude = ['post']
-    def __init__(self, *args,**kwargs):
-        super(ContactsForm, self).__init__(*args,**kwargs)
-        for fild_name, fild in self.fields.items():
-            fild.widget.attrs['class'] = 'form-control'
-            fild.widget.attrs['placeholder'] = fild_name
+        fields = ['full_name', 'email', 'subject', 'message']
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field_name

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import AdminSite
 
-from .models import Author, About, Tag, Post,Contact,Comment
+from .models import Author, About, Tag, Post,Contacts,Comment
 # Register your models here.
 
 @admin.register(Post)
@@ -27,5 +27,5 @@ class AuthorAdmin(admin.ModelAdmin):
     list_display = ('id', 'full_name', 'created_at')
     list_display_links = ('id', 'full_name')
 
-admin.site.register(Contact)
+admin.site.register(Contacts)
 admin.site.register(Comment)
